@@ -7,7 +7,7 @@ import { CategoryProps } from './types/CategoryProps';
 function Cheat() {
     return (
         <div className="cheat">
-            {categories.map( category => <Category title={category.title} stories={category.stories}/>)}
+            {categories.map( (category, index) => <Category key={index} title={category.title} stories={category.stories}/>)}
         </div>
     );
 }
