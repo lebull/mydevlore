@@ -1,6 +1,6 @@
 import React from 'react';
 import { CategoryProps } from './types/CategoryProps';
-import './Category.css';
+import './Category.scss';
 
 export const Category = ({title, stories}: CategoryProps) => <div className="category">
     <h2>{title}</h2>

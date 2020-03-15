@@ -23,7 +23,7 @@ const categories: Array<CategoryProps> = [
         ]
     },
     {
-        title: "Customer Obsession",
+        title: "Ownership",
         stories: [
             "Distance site: Temporary Fulltime Dev",
             "Make PestWeb not suck",
@@ -42,7 +42,7 @@ const categories: Array<CategoryProps> = [
         title: "Are Right, a Lot",
         stories: [
             "Waerhauser acquisition almost-mishap",
-            "Univar: SD Card Impending Doom<",
+            "Univar: SD Card Impending Doom",
             "Document Database",
         ]
     },
@@ -65,7 +65,7 @@ const categories: Array<CategoryProps> = [
         title: "Insist on the Highest Standards",
         stories: [
             "Make PestWeb not suck (even though it's dying)",
-            "Refusal for &quot;This is the way we always do it&quot; that I told Charley",
+            "Refusal for \"This is the way we always do it\" that I told Charley",
             "Adhearence to Fiori UX Guidelines",
         ]
     },
