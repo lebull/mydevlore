@@ -25,13 +25,14 @@ class Cheat extends React.Component {
             .then(response => this.setState({ 
                 loading: false,
                 error: false,
-                categories: response,
+                categories: response.lore,
             }))      
             .catch(error => this.setState({ 
                 loading: false, 
                 error: true 
             }));
     }
+
     render(){
         if(this.state.loading){
             return (
