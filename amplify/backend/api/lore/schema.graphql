@@ -1,0 +1,25 @@
+type Lore 
+  @model
+  @auth(
+    rules: [
+      {allow: owner, operations: [create, update, delete, read]},
+    ])
+{
+  id: ID!
+  name: String!
+  stories: [Story] @connection(keyName: "byLore", fields: ["id"])
+}
+
+type Story 
+  @model 
+  @auth(
+    rules: [
+      {allow: owner, operations: [create, update, delete, read]},
+    ])
+  @key(name: "byLore", fields: ["loreID"])
+{
+  id: ID!
+  text: String!
+  loreID: ID!
+  lore: Lore @connection(fields: ["loreID"])
+}
