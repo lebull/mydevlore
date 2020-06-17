@@ -1,14 +1,12 @@
 import React from 'react';
-import { Category } from './Category';
-import { CategoryProps } from './types/CategoryProps';
-
+import { Category, CategoryProps } from './Category';
 
 class Cheat extends React.Component {
 
     state = {
         loading: true,
         error: false,
-        categories: new Array<CategoryProps>(),
+        principles: new Array<CategoryProps>(),
     }
 
     componentDidMount(){
@@ -20,13 +18,13 @@ class Cheat extends React.Component {
             loading: true,
             error: false,
         });
-        fetch("https://1sffma9blc.execute-api.us-east-1.amazonaws.com/default/getLore")
+        fetch("http://104.248.119.11/principles")
             .then(response => response.json())
             .then(response => this.setState({ 
                 loading: false,
                 error: false,
-                categories: response.lore,
-            }))      
+                principles: response,
+            }))     
             .catch(error => this.setState({ 
                 loading: false, 
                 error: true 
@@ -46,8 +44,8 @@ class Cheat extends React.Component {
             return (
                 <div className="cheat">
                     { 
-                        this.state.categories.map( (category, index) =>
-                            <Category key={index} title={category.title} stories={category.stories}/> 
+                        this.state.principles.map(
+                            (principle, index) => <Category key={index} principle={principle}/> 
                         ) 
                     }
                 </div>
