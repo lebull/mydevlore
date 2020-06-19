@@ -1,5 +1,5 @@
 import React from 'react';
-import './Category.scss';
+import './Answer.scss';
 
 export type AnswerProps = {
     answer: {
