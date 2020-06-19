@@ -29,18 +29,45 @@
         padding: 0;
     }
 
+    .questions{
+        li{
+            margin: 1em;
+        }
+    }
 
     .storyContainer{
         display: flex;
         flex-direction: column;
+        flex-grow: 1;
+        width: 100%;
        
         //background-color: rgba(90, 69, 84, 1);
         a{
+            display: flex;
             padding: 1em;
+            margin: 0.2em;
             color: rgba(255,255,255,0.6);
-            //text-decoration: none;
+            background-color: rgba(255,255,255,0.1);
+            text-decoration: none;
+
             &:hover{
                 color: rgba(255,255,255,0.8);
+            }
+
+            .icons{
+                display: flex;
+                justify-content: center;
+                width: 4em;
+
+                .good{
+                    color: rgb(206, 206, 38)
+                }
+                .recent{
+                    color: rgb(33, 197, 44)
+                }
+                .bad{
+                    color: rgb(207, 42, 51)
+                }
             }
         }
     }

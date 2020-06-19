@@ -2,7 +2,20 @@
     display: block;
     text-align: left;
 
+    max-width: 800px;
+    margin: auto;
+
     li{
         margin: 1em;
+    }
+
+    .principles{
+        display: flex;
+        justify-content: center;
+        span{
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 1em;
+            margin: 2em;
+        }
     }
 }

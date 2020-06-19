@@ -9,6 +9,7 @@ type Answer = {
     Task: string | null,
     Action: string | null,
     Result: string | null,
+    principles: any,
 }
 const defaultAnswer: Answer = {
     Title: null,
@@ -16,6 +17,7 @@ const defaultAnswer: Answer = {
     Task: null,
     Action: null,
     Result: null,
+    principles: []
 };
 
 export type AnswerProps = {
@@ -32,13 +34,12 @@ export const Answer = () => {
 
     let { id } = useParams();
 
-
-
     let [answer, setAnswer] = useState<Answer>(defaultAnswer);
     let [loading, setLoading] = useState(false);
     let [error, setError] = useState(null);
 
     useEffect(() => {
+        setLoading(true);
         fetch(`http://104.248.119.11/answers/${id}`)
             .then(async response => await response.json())
             .then((response: any) => {
@@ -52,11 +53,11 @@ export const Answer = () => {
     }, [id]);
 
     if (loading) {
-        return <h3>Loading...</h3>
+        return <div className="message"><h3>Loading...</h3></div>
     }
 
     if (error) {
-        return <h3>{error}</h3>
+        return <div className="message"><h3>{error}</h3></div>
     }
 
     return (<div className="answer">
@@ -67,6 +68,9 @@ export const Answer = () => {
             <li>{answer.Action}</li>
             <li>{answer.Result}</li>
         </ul>
+        <div className="principles">
+            {answer.principles.map((principle:any) => <span>{principle.Title}</span>)}
+        </div>
     </div>)
 }
 
