@@ -1,10 +1,26 @@
 import React from 'react';
 import Cheat from './components/cheat/Cheat';
+import { Answer } from './components/cheat/Answer';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <Cheat/>
+      <Router>
+        <Switch>
+            <Route path="/answers/:id">
+              <Answer />
+            </Route>
+            <Route path="/">
+              <Cheat/>
+            </Route>
+          </Switch>
+      </Router>
+
 
       {/* <div>
         <small>You are running this application in <b>{process.env.NODE_ENV}</b> mode.</small>

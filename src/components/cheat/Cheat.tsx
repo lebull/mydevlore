@@ -1,6 +1,7 @@
 import React from 'react';
 import { Category, CategoryProps } from './Category';
 
+
 class Cheat extends React.Component {
 
     state = {
@@ -8,6 +9,7 @@ class Cheat extends React.Component {
         error: false,
         principles: new Array<CategoryProps>(),
     }
+    
 
     componentDidMount(){
         this.fetchCheat();

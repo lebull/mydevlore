@@ -29,4 +29,19 @@
         padding: 0;
     }
 
+
+    .storyContainer{
+        display: flex;
+        flex-direction: column;
+       
+        //background-color: rgba(90, 69, 84, 1);
+        a{
+            padding: 1em;
+            color: rgba(255,255,255,0.6);
+            //text-decoration: none;
+            &:hover{
+                color: rgba(255,255,255,0.8);
+            }
+        }
+    }
 }
