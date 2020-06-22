@@ -44,7 +44,7 @@
         //background-color: rgba(90, 69, 84, 1);
         a{
             display: flex;
-            padding: 1em;
+            padding: 1em 1em 1em 0em;
             margin: 0.2em;
             color: rgba(255,255,255,0.6);
             background-color: rgba(255,255,255,0.1);
@@ -55,9 +55,13 @@
             }
 
             .icons{
+                width: 4em;
                 display: flex;
                 justify-content: center;
-                width: 4em;
+                align-items: center;
+                span{
+                    padding: 0.2em
+                }
 
                 .good{
                     color: rgb(206, 206, 38)
@@ -68,6 +72,11 @@
                 .bad{
                     color: rgb(207, 42, 51)
                 }
+            }
+
+            .text{
+                display: flex;
+                align-items: center;
             }
         }
     }

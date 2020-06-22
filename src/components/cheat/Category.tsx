@@ -44,9 +44,9 @@ export const Category = ({principle}: CategoryProps) => <div className="category
     <h2>{principle.Title}</h2>
     <p>{principle.Description}</p>
 
-    <ul className="questions">
+    {/* <ul className="questions">
         {principle.questions.map((question: any, index: number) => <li key={index}>{question.text}</li>)}
-    </ul>
+    </ul> */}
 
     <div className="storyContainer">
         {principle.answers.sort(orderAnswers).map((answer: any, index: any) => {
@@ -54,25 +54,24 @@ export const Category = ({principle}: CategoryProps) => <div className="category
             let icons = [];
 
             if(isGood(answer)){
-                icons.push(<span className="good">
+                icons.push(<span className="good" key={0}>
                     <FontAwesomeIcon icon={faStar} />
                 </span>)
             }
             if(isRecent(answer)){
-                icons.push(<span className="recent">
+                icons.push(<span className="recent" key={1}>
                     <FontAwesomeIcon icon={faClock} />
                 </span>)
             }
             if(!isPopulated(answer)){
-                icons.push(<span className="bad">
+                icons.push(<span className="bad" key={2}>
                     <FontAwesomeIcon icon={faSquare} />
                 </span>)
             }
 
             return <Link key={index} to={`/answers/${answer.id}`} className="story">
-                <div className="icons" children={icons}/>
+                <div className="icons">{icons}</div>
                 <div className="text">{answer.Title}</div>
-                
             </Link>
         })}
     </div>

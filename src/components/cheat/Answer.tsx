@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Answer.scss';
 import { useParams } from "react-router-dom";
+import { strapi } from '../../env';
 
 
 type Answer = {
@@ -38,6 +39,8 @@ export const Answer = () => {
     let [loading, setLoading] = useState(false);
     let [error, setError] = useState(null);
 
+    let link = `${strapi}/admin/plugins/content-manager/collectionType/application::answers.answers/${id}`;
+    
     useEffect(() => {
         setLoading(true);
         fetch(`https://104.248.119.11/answers/${id}`)
@@ -69,8 +72,9 @@ export const Answer = () => {
             <li>{answer.Result}</li>
         </ul>
         <div className="principles">
-            {answer.principles.map((principle:any) => <span>{principle.Title}</span>)}
+            {answer.principles.map((principle:any, index: number) => <span key={index}>{principle.Title}</span>)}
         </div>
+        <a href={link} target="_blank" rel="noopener noreferrer">Edit this question</a>
     </div>)
 }
 
