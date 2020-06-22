@@ -38,8 +38,6 @@ export const Answer = () => {
     let [answer, setAnswer] = useState<Answer>(defaultAnswer);
     let [loading, setLoading] = useState(false);
     let [error, setError] = useState(null);
-
-    let link = `${strapi}/admin/plugins/content-manager/collectionType/application::answers.answers/${id}`;
     
     useEffect(() => {
         setLoading(true);
@@ -74,7 +72,6 @@ export const Answer = () => {
         <div className="principles">
             {answer.principles.map((principle:any, index: number) => <span key={index}>{principle.Title}</span>)}
         </div>
-        <a href={link} target="_blank" rel="noopener noreferrer">Edit this question</a>
     </div>)
 }
 
