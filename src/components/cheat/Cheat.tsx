@@ -1,5 +1,6 @@
 import React from 'react';
 import { Category, CategoryProps } from './Category';
+import { strapi } from '../../env';
 
 
 class Cheat extends React.Component {
@@ -20,7 +21,7 @@ class Cheat extends React.Component {
             loading: true,
             error: false,
         });
-        fetch("https://104.248.119.11/principles")
+        fetch(`${strapi}/principles`)
             .then(response => response.json())
             .then(response => this.setState({ 
                 loading: false,

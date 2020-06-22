@@ -43,7 +43,7 @@ export const Answer = () => {
     
     useEffect(() => {
         setLoading(true);
-        fetch(`https://104.248.119.11/answers/${id}`)
+        fetch(`${strapi}/answers/${id}`)
             .then(async response => await response.json())
             .then((response: any) => {
                 setLoading(false);

@@ -1,6 +1,7 @@
 import React from 'react';
 import Cheat from './components/cheat/Cheat';
 import { Answer } from './components/cheat/Answer';
+import { MyQuestions } from  './components/MyQuestions';
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,6 +15,9 @@ function App() {
         <Switch>
             <Route path="/answers/:id">
               <Answer />
+            </Route>
+            <Route path="/myQuestions">
+              <MyQuestions/>
             </Route>
             <Route path="/">
               <Cheat/>
