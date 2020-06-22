@@ -57,7 +57,8 @@ export const Answer = () => {
     }
 
     if (error) {
-        return <div className="message"><h3>{error}</h3></div>
+        debugger;
+        return <div className="message"><h3>An error occured.</h3></div>
     }
 
     return (<div className="answer">
