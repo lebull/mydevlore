@@ -41,7 +41,10 @@ class Cheat extends React.Component {
             );
         }else if(this.state.error){
             return(
-                <div className="cheat">Error</div>
+                <div className="cheat">
+                    <p>Error</p>
+                    <p>I'm cheap and too lazy to get a signed cert by an authority, so you're gana have to go to <a href="${strapi}">{strapi}</a> to accept my self-signed cert :c.</p>
+                </div>
             )
         }else{
             return (

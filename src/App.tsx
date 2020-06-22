@@ -1,7 +1,7 @@
 import React from 'react';
 import Cheat from './components/cheat/Cheat';
 import { Answer } from './components/cheat/Answer';
-import { MyQuestions } from  './components/MyQuestions';
+import { MyQuestions } from  './components/MyQuestions/MyQuestions';
 import {
   BrowserRouter as Router,
   Switch,
