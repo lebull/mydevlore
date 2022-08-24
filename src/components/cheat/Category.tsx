@@ -49,7 +49,7 @@ export const Category = ({principle}: CategoryProps) => <div className="category
     </ul>
 
     <div className="storyContainer">
-        {principle.answers.sort(orderAnswers).map((answer: any, index: any) => {
+        {principle.answers.filter((answer: any) => !answer.archived).sort(orderAnswers).map((answer: any, index: any) => {
 
             let icons = [];
 
